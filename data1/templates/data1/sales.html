@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h5 class="text-center">All Item Sales Records</h5>
+<hr>
+  <table class="table table-borderless">
+     <thead class="border-bottom font-weight-bold">
+         <tr>
+             <td>Sales No.</td>
+             <td>Item</td>
+             <td>Quantity</td>
+             <td>Price</td>
+             <td>Sales Date</td>
+             
+         </tr>
+     </thead>
+     <tbody>
+         {% for sale in object_list %}
+            <tr>
+                <td>{{ sale.selling_number }}</td>
+                <td>{{ sale.item_code }}</td>
+                <td>{{ sale.sold_quantity }}</td>
+                <td><b>KES. {{ sale.sales_amount }}</b></td>
+                <td>{{ sale.date_sold }}</td>
+            </tr>
+         {% endfor %}
+     </tbody>
+ </table>
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <h4 class="text-center">Restock Item</h4>
+<br>
+<hr>
+  <form action="" method="post">
+      {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+{% endblock content %}

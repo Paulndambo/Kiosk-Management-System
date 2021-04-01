@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>{{ stock.item_name }}</h1>
+<p>Buying Price: {{ stock.buying_price}}</p>
+<p>Selling Price: {{ stock.selling_price }}</p>
+<p>Stock Level: {{ stock.available_items }}</p>
+
+<br>
+
+      <a href="{% url 'update_stock' stock.pk %}" class="btn btn-primary">Update Price</a>
+    
+    <button onclick="print()" class="btn btn-secondary">Print</button>
+ 
+
+{% endblock %}
